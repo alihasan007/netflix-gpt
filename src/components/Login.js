@@ -1,16 +1,15 @@
 import React, { useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { auth } from '../utils/firebase';
 import { checkValidData } from '../utils/validate'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Header from './Header'
+import { APP_BACKGROUND_IMG } from '../utils/contant';
 
 
 export const Login = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate()
 
     const [isSignInForm, setIsSignInForm] = useState(true)
     const [errorMsg, setErrorMsg] = useState(null);
@@ -40,18 +39,12 @@ export const Login = () => {
                         // Profile updated!
                         const { uid, email, displayName } = auth;
                         dispatch(addUser({ uid, email, displayName }))
-                        navigate('/browse')
-
-                        // ...
                     }).catch((error) => {
-                        // An error occurred
-                        // ...
                         setErrorMsg(error.errorMessage)
                     });
                     // ...
                 })
                 .catch((error) => {
-                    console.log(error)
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     setErrorMsg(errorCode + "-" + errorMessage)
@@ -63,9 +56,6 @@ export const Login = () => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-
-                    navigate('/browse')
-                    // ...
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -79,8 +69,8 @@ export const Login = () => {
         <div>
             <Header />
             <div className='absolute'>
-                <img src='https://assets.nflxext.com/ffe/siteui/vlv3/dace47b4-a5cb-4368-80fe-c26f3e77d540/f5b52435-458f-498f-9d1d-ccd4f1af9913/IN-en-20231023-popsignuptwoweeks-perspective_alpha_website_large.jpg'
-                    alt='netflic-logo' />
+                <img src={APP_BACKGROUND_IMG}
+                    alt='APP-Background-image' />
             </div>
             <div>
                 <form className='absolute w-1/3 p-12 bg-black my-36 mx-auto right-0 left-0 text-white bg-opacity-80'>
