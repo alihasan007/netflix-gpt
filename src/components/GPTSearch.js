@@ -6,7 +6,7 @@ import { APP_BACKGROUND_IMG } from '../utils/contant'
 const GPTSearch = () => {
   return (
     <div>
-      <div className='absolute -z-10'>
+      <div className='fixed -z-10'>
         <img src={APP_BACKGROUND_IMG}
           alt='APP-Background-image' />
       </div>
