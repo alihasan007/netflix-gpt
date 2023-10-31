@@ -5,7 +5,7 @@ import { auth } from '../utils/firebase';
 import { checkValidData } from '../utils/validate'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import Header from './Header'
-import { APP_BACKGROUND_IMG } from '../utils/contant';
+import { APP_BACKGROUND_IMG } from '../utils/constant';
 
 
 export const Login = () => {

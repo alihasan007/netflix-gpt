@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import lang from '../utils/languageConstant'
 import { useDispatch, useSelector } from 'react-redux'
 import openai from '../utils/openai'
-import { API_OPTIONS } from '../utils/contant'
+import { API_OPTIONS } from '../utils/constant'
 import { showSearchedMovies } from '../store/gptSlice'
 
 const GPTSearchBar = () => {
@@ -28,6 +28,7 @@ const GPTSearchBar = () => {
             return searchMovieTmdb(movieName);
         })
         const tmdbResult = await Promise.all(data)
+        console.log(process.env.REACT_APP_TMDB_KEY)
         dispatch(showSearchedMovies({ searchedMovies: gptResult, searchedResult: tmdbResult }));
     }
     return (

@@ -1,6 +1,6 @@
-import { useEffect, useSyncExternalStore } from "react";
+import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { API_OPTIONS } from "../utils/contant";
+import { API_OPTIONS } from "../utils/constant";
 import { addTrailerVideo } from "../store/moviesSlice";
 
 const useMovieTrailer = (movieId) => {

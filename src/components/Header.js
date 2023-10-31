@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from '../store/userSlice';
-import { LOGO, USER_AVATAR } from '../utils/contant';
+import { LOGO, USER_AVATAR } from '../utils/constant';
 import { toggleGptSearchView } from '../store/gptSlice'
 import { changeLanguage } from '../store/configSlice';
 
