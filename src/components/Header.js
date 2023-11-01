@@ -47,9 +47,9 @@ const Header = () => {
 
     return (
         <div
-            className='absolute w-screen px-8 py-2 bg-gradient-to-b from from-black z-10 flex justify-between'>
+            className='fixed w-screen px-8 py-2 bg-gradient-to-b from from-black z-50 flex flex-col md:flex-row  md:justify-between'>
             <img
-                className='w-44'
+                className='w-44 mx-auto md:mx-0'
                 src={LOGO} alt='netflix-logo' />
             {user && <div className='flex p-2'>
                 <select className='px-2 mx-2 rounded-lg bg-gray-900 text-white' onChange={handleLanguageChange}>
